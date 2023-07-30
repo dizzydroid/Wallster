@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content">
+    <h2>Here's your randomly generated desktop wallpaper</h2>
+    <img src="{{ image_url }}" alt="Random Wallpaper" class="wallpaper">
+    <div class="buttons">
+        <button onclick="saveImage()">Save to PC</button>
+        <button onclick="shareImage()">Share</button>
+        <button onclick="reloadPage()">Don't like it? Reroll!</button>
+    </div>
+</div>
+{% endblock %}

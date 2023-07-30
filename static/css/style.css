@@ -1,0 +1,67 @@
+/* Style the container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the header */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the logo */
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+/* Style the title */
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: #333;
+    margin-left: 20px;
+}
+
+/* Style the content */
+.content {
+    margin-top: 40px;
+}
+
+/* Style the subtitle */
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style the wallpaper */
+.wallpaper {
+    width: 100%;
+    height: auto;
+    border: 5px solid #eee;
+}
+
+/* Style the buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}

@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # Call the Unsplash API to get a random image URL
-    response = requests.get('https://source.unsplash.com/random/1920x1080?featured')
+    response = requests.get('https://source.unsplash.com/featured/1920x1080')
     image_url = response.url
 
     # Render the index.html template and pass the image URL as a variable

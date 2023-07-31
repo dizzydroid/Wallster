@@ -2,12 +2,44 @@
 
 {% block content %}
 <div class="content">
-    <h2>Here's your randomly generated desktop wallpaper</h2>
+    <h2 style="font-family: Helvetica;">Here's your randomly generated desktop wallpaper 😃</h2>
     <img src="{{ image_url }}" alt="Random Wallpaper" class="wallpaper">
     <div class="buttons">
-        <button onclick="saveImage()">Save to PC</button>
-        <button onclick="shareImage()">Share</button>
-        <button onclick="reloadPage()">Don't like it? Reroll!</button>
+        <a href="{{ image_url }}" download>
+            <button><i class="fas fa-save"></i>  Save to PC</button>
+        </a>
+        
+
+        <button id="shareButton">
+            <i class="fas fa-share-alt"></i>
+             Share
+        </button>
+        
+            
+        
+        <button onclick="location.reload();"><i class="fas fa-dice"></i>  Don't like it? Reroll!</button>
     </div>
+
+
+   <!-- The Modal -->
+<div id="shareModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Share this wallpaper</h2>
+        <div class="modal-links">
+            <a class="share-link twitter-link" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20wallpaper%20from%20Wallster:%20{{ image_url }}" target = "_blank">
+                <i class="fab fa-twitter"></i> Share on Twitter
+            </a>
+            <a class="share-link facebook-link" href="https://www.facebook.com/sharer/sharer.php?u={{ image_url }}" target = "_blank">
+                <i class="fab fa-facebook"></i> Share on Facebook
+            </a>
+            <a class="share-link get-link" href="#" onclick="copyToClipboard('{{ image_url }}'); return false;">
+                <i class="fas fa-paperclip"></i> Get Link
+            </a>            
+        </div>
+    </div>
+</div>
+
 </div>
 {% endblock %}

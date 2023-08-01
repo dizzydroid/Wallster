@@ -25,6 +25,7 @@ ______________________________________
 - Did I miss any? 👉️ Report any other <a href = "https://github.com/dizzydroid/Wallster/issues"><b>issues</b></a> you encounter!
 ___________________________________________________________
 
+#### The original ```app.py``` is included in case you want to run the flask-run app locally 🛠️
 _____________________________
 
 <p align="center"> This web-app is part of the DizzyBlog © dizzydroid. All rights reserved </p>

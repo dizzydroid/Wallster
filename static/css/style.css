@@ -1,3 +1,4 @@
+
 /* Light Mode */
 * {
     box-sizing: border-box;
@@ -29,9 +30,9 @@ body {
 
 
 .logo {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    margin-right: 0;
 }
 
 h1 {
@@ -504,3 +505,79 @@ p.disclaimer {
     text-align: center;
     font-family:'Times New Roman', Times, serif;
 }
+
+
+/*MOBILE OPTIMIZATION*/
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 20px 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    button {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .dark-mode-switch {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+

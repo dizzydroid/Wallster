@@ -14,11 +14,25 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="{{ url_for('static', filename='images/logo_light.png') }}" alt="Wallster Logo" class="logo">
-            <h1>Wallster | Random Wallpapers</h1>
+            <div class="title-switch">
+                <img src="{{ url_for('static', filename='images/logo_light.png') }}" 
+            alt="Wallster Logo" 
+            class="logo" 
+             id="logo" 
+            data-light="{{ url_for('static', filename='images/logo_light.png') }}" 
+            data-dark="{{ url_for('static', filename='images/logo_dark.png') }}">
+                <h1>Wallster | Random Wallpapers</h1>
+                <div class="dark-mode-switch" id="darkModeSwitch">
+                    <input type="checkbox" id="themeSwitch" name="theme">
+                    <label for="themeSwitch" id="toggleTheme">
+                        <i class="fas fa-sun" id="sunIcon"></i>
+                        <i class="fas fa-moon" id="moonIcon"></i>
+                    </label>
+                </div>
+            </div>
         </div>
         {% block content %}
         {% endblock %}
-    </div>
+    </div>    
 </body>
 </html>

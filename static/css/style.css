@@ -1,12 +1,17 @@
+/* Light Mode */
 * {
     box-sizing: border-box;
 }
 
+.main-container {
+    position: relative;  /* Add this line to position children elements relative to this container */
+}
 
 body {
     font-family: 'Roboto', sans-serif;
     background: #f5f5f5;
     color: #333;
+    transition: all 0.3s linear;
 }
 
 .container {
@@ -17,9 +22,11 @@ body {
 
 .header {
     display: flex;
+    justify-content: space-between; /* Add this line to align children elements to both ends */
     align-items: center;
     margin-bottom: 40px;
 }
+
 
 .logo {
     width: 100px;
@@ -66,17 +73,15 @@ h2 {
     justify-content: space-between;
     margin-top: 20px;
     flex-wrap: wrap;
-    
 }
 
 .buttons button {
-    margin-right: 10px; /* add right margin */
+    margin-right: 10px;
 }
 
 .buttons button:last-child {
-    margin-right: 0; /* remove right margin from the last button to align it properly */
+    margin-right: 0;
 }
-
 
 .buttons i {
     margin-right: 10px;
@@ -85,7 +90,6 @@ h2 {
 .buttons a {
     text-decoration: none;
 }
-
 
 button {
     font-size: 18px;
@@ -104,7 +108,7 @@ button {
     flex-grow: 1;
     text-align: center;
     text-decoration: none;
-    width: 100%; /* or something less than 100% if you want some space between buttons */
+    width: 100%;
     max-width: 90%;
 }
 
@@ -113,17 +117,17 @@ button:hover {
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
@@ -148,21 +152,19 @@ button:hover {
     cursor: pointer;
 }
 
-/* Modal content */
 .modal-content {
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap; /* new */
+    flex-wrap: wrap;
     background-color: #fefefe;
     border-radius: 10px;
-    box-sizing: border-box; 
-    width: 90%; 
+    box-sizing: border-box;
+    width: 90%;
     max-width: 600px;
 }
 
-/* Close button */
 .close {
     color: #aaaaaa;
     float: right;
@@ -177,16 +179,12 @@ button:hover {
     cursor: pointer;
 }
 
-/* Modal links */
 .modal-links {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
 }
-
-/* Share links */
-
 
 .share-link, .get-link {
     display: flex;
@@ -209,8 +207,6 @@ button:hover {
     opacity: 0.9;
 }
 
-
-
 .share-link:hover {
     opacity: 0.9;
 }
@@ -223,7 +219,6 @@ button:hover {
     background-color: #3B5998;
 }
 
-
 .get-link {
     background-color: #4CAF50;
     cursor: pointer;
@@ -233,8 +228,271 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Icons */
 .share-link i {
     margin-right: 10px;
+}
+
+
+/* Dark Mode */
+#sunIcon {
+    display: inline-block;
+}
+
+#moonIcon {
+    display: none;
+}
+
+
+body.dark-mode {
+    background: #121212;
+    color: #f5f5f5;
+}
+
+body.dark-mode h1, body.dark-mode h2 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .content {
+    background: #333;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .modal-content {
+    background-color: #333;
+    border-color: #888;
+}
+
+body.dark-mode .close {
+    color: #f5f5f5;
+}
+
+body.dark-mode .close:hover,
+body.dark-mode .close:focus {
+    color: #f5f5f5;
+}
+
+body.dark-mode .share-link, body.dark-mode .get-link {
+    background-color: #888;
+    color: #f5f5f5;
+}
+
+body.dark-mode .share-link:hover, body.dark-mode .get-link:hover {
+    opacity: 0.7;
+}
+
+body.dark-mode .twitter-link {
+    background-color: #1DA1F2;
+}
+
+body.dark-mode .facebook-link {
+    background-color: #3B5998;
+}
+
+body.dark-mode .get-link {
+    background-color: #888;
+    cursor: pointer;
+}
+
+body.dark-mode .get-link:hover {
+    background-color: #777;
+}
+
+
+/* Dark Mode Slider */
+.dark-mode-switch {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 34px;
+    margin-left: auto;
+}
+
+.dark-mode-switch label {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 34px;
+    border-radius: 34px;
+    background: #bebebe;
+    cursor: pointer;
+}
+
+.dark-mode-switch label::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    margin: 4px;
+    background: #ffffff;
+    transition: 0.2s;
+}
+
+.dark-mode-switch input:checked + label {
+    background: #4caf50;
+}
+
+.dark-mode-switch input:checked + label::after {
+    transform: translateX(26px);
+}
+
+.dark-mode-switch span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FFF;
+    transition: transform 0.5s;
+}
+
+body.dark-mode .dark-mode-switch {
+    background-color: #4D4D4D;
+}
+
+body.dark-mode .dark-mode-switch span {
+    transform: translateX(30px);
+    background-color: #FFF;
+}
+
+#themeSwitch {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#toggleTheme {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+#themeSwitch:checked + #toggleTheme .slider {
+    background-color: #2196F3;
+}
+
+#themeSwitch:focus + #toggleTheme .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+#themeSwitch:checked + #toggleTheme .slider:before {
+    transform: translateX(26px);
+}
+
+.title-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+#toggleTheme {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    width: 60px;
+    height: 34px;
+    border-radius: 34px;
+    background: #bebebe;
+    transition: .4s;
+}
+
+#toggleTheme:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .4s;
+}
+
+#themeSwitch:checked + #toggleTheme {
+    background-color: #2196F3;
+}
+
+#themeSwitch:checked + #toggleTheme:before {
+    transform: translateX(26px);
+}
+
+#themeSwitch:disabled + #toggleTheme {
+    pointer-events: none;
+    background: #grey;
+}
+
+#themeSwitch {
+    display: none;
+}
+
+/* Icon styles */
+#sunIcon, #moonIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s linear;
+}
+
+#sunIcon {
+    left: 10px;
+}
+
+#moonIcon {
+    right: 10px;
+}
+
+/* Change color of icons */
+#sunIcon {
+    color: #f1c40f;
+}
+
+#moonIcon {
+    color: #fff;
+}
+
+#themeSwitch:checked + #toggleTheme #sunIcon {
+    color: #bdc3c7;
+}
+
+#themeSwitch:checked + #toggleTheme #moonIcon {
+    color: #f1c40f;
 }
 

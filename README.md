@@ -6,7 +6,7 @@
 ## Find the perfect wallpaper! 🖼️
 
 <pre align = "center"> <b> 
-<a href="https://dizzydroid.github.com/Wallster">Take me to Wallster!</a> </b>
+<a href="https://dizzydroid.github.io/Wallster">Take me to Wallster!</a> </b>
 </pre>
 
 ### No longer Google "cool desktop wallpapers", just hit the reroll button 🎲

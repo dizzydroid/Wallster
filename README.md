@@ -5,12 +5,12 @@
 
 ## Find the perfect wallpaper! 🖼️
 
-### No longer google "cool desktop wallpapers", just hit the reroll button 🎲
-This web-app offers you a (_limitless_) collection of randomly generated wallpapers, **save** the ones you like, **share** them or **reroll** for another shot!
-
 <pre align = "center"> <b> 
 <a href="https://dizzydroid.github.com/Wallster">Take me to Wallster!</a> </b>
 </pre>
+
+### No longer Google "cool desktop wallpapers", just hit the reroll button 🎲
+This web-app offers you a (_limitless_) collection of randomly generated wallpapers, **save** the ones you like, **share** them or **reroll** for another shot!
 
 _____________________________
 
@@ -25,7 +25,7 @@ ______________________________________
 - Did I miss any? 👉️ Report any other <a href = "https://github.com/dizzydroid/Wallster/issues"><b>issues</b></a> you encounter!
 ___________________________________________________________
 
-#### The original ```app.py``` is included in case you want to run the flask-run app locally 🛠️
+#### I included the ```app.py``` file in case you want to run the flask-built app locally 🛠️
 _____________________________
 
 <p align="center"> This web-app is part of the DizzyBlog © dizzydroid. All rights reserved </p>

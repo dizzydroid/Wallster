@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wallster: Random Wallpapers</title>
+        <link rel="icon" href="static/images/favicon.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="static/css/style.css">
+        <script src="static/js/script.js"></script>
+    </head>    
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="title-switch">
+                    <img src="static/images/logo_light.png" 
+                alt="Wallster Logo" 
+                class="logo" 
+                id="logo" 
+                data-light="static/images/logo_light.png" 
+                data-dark="static/images/logo_dark.png">
+                    <h1>Wallster | Random Wallpapers</h1> 
+                    <div class="dark-mode-switch" id="darkModeSwitch">
+                        <input type="checkbox" id="themeSwitch" name="theme">
+                        <label for="themeSwitch" id="toggleTheme">
+                            <i class="fas fa-sun" id="sunIcon"></i>
+                            <i class="fas fa-moon" id="moonIcon"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <p class = "disclaimer"><u><b>DISCLAIMER</b></u><br>I do not create and/or own any of the featured wallpapers. All generated wallpapers are property of Unsplash®</p>
+            <p class = "whiteonly" id="darkModeThanks">THANKS FOR USING DARK MODE, YOU A REAL ONE 🫡 👑</p>
+            <div class="content">
+                <h2 style="font-family: Helvetica;" id="wallpaperHeader">Here's your randomly generated desktop wallpaper 😃</h2>
+                <img id="wallpaperImage" alt="Random Wallpaper" class="wallpaper">
+                <div class="buttons">
+                    <a id="saveButton" target="_blank" download>
+                        <button><i class="fas fa-save"></i><b>Save to PC</b></button>
+                    </a>
+                    <button id="shareButton">
+                        <i class="fas fa-share-alt"></i><b>Share</b>
+                    </button>
+                    <button onclick="fetchUnsplashImage();"><i class="fas fa-dice"></i><b>Don't like it? Reroll!</b></button>
+                </div>
+                <!-- The Modal -->
+                <div id="shareModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Share this wallpaper</h2>
+                        <div class="modal-links">
+                            <a class="share-link twitter-link" id="twitterShare" target = "_blank">
+                                <i class="fab fa-twitter"></i> Share on Twitter
+                            </a>
+                            <a class="share-link facebook-link" id="facebookShare" target = "_blank">
+                                <i class="fab fa-facebook"></i> Share on Facebook
+                            </a>
+                            <a class="share-link get-link" id="getLink" href="#" onclick="copyToClipboard(); return false;">
+                                <i class="fas fa-paperclip"></i> Get Link
+                            </a>            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function fetchUnsplashImage() {
+                fetch('https://source.unsplash.com/featured/1920x1080')
+                .then(response => {
+                    var imageUrl = response.url;
+                    document.getElementById('wallpaperImage').src = imageUrl;
+                    document.getElementById('saveButton').href = imageUrl;
+                    document.getElementById('twitterShare').href = "https://twitter.com/intent/tweet?text=Check%20out%20this%20wallpaper%20from%20Wallster:%20" + imageUrl;
+                    document.getElementById('facebookShare').href = "https://www.facebook.com/sharer/sharer.php?u=" + imageUrl;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+
+            function copyToClipboard() {
+                var imageUrl = document.getElementById('wallpaperImage').src;
+                navigator.clipboard.writeText(imageUrl);
+            }
+
+            // Fetch the initial image when the page loads
+            fetchUnsplashImage();
+        </script>
+    </body>
+</html>

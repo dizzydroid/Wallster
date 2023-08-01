@@ -506,6 +506,19 @@ p.disclaimer {
     font-family:'Times New Roman', Times, serif;
 }
 
+.whiteonly {
+    display: none;
+}
+
+body.dark-mode .whiteonly {
+    display: block;
+}
+
+p.whiteonly {
+    color: #a8a8a8;
+    text-align: center;
+}
+
 
 /*MOBILE OPTIMIZATION*/
 @media only screen and (max-width: 768px) {

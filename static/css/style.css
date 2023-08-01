@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: space-between; /* Add this line to align children elements to both ends */
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 0;
 }
 
 
@@ -92,8 +92,9 @@ h2 {
 }
 
 button {
-    font-size: 18px;
-    color: #fff;
+    font-size: 24px;
+    font-family: 'Helvetica', sans-serif;
+    color: #FFB6C1;
     background-color: #00897b;
     border: none;
     border-radius: 50px;
@@ -348,7 +349,7 @@ body.dark-mode .get-link:hover {
 }
 
 body.dark-mode .dark-mode-switch {
-    background-color: #4D4D4D;
+    background-color: transparent;
 }
 
 body.dark-mode .dark-mode-switch span {
@@ -456,7 +457,7 @@ body.dark-mode .dark-mode-switch span {
 
 #themeSwitch:disabled + #toggleTheme {
     pointer-events: none;
-    background: #grey;
+    background: grey;
 }
 
 #themeSwitch {
@@ -485,7 +486,7 @@ body.dark-mode .dark-mode-switch span {
 }
 
 #moonIcon {
-    color: #fff;
+    color: #ffffff;
 }
 
 #themeSwitch:checked + #toggleTheme #sunIcon {
@@ -496,3 +497,10 @@ body.dark-mode .dark-mode-switch span {
     color: #f1c40f;
 }
 
+
+p.disclaimer {
+    font-size: 24px;
+    color: darkgray;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}

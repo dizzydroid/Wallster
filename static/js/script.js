@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+
 window.addEventListener('DOMContentLoaded', (event) => {
     // Get the modal
     var modal = document.getElementById("shareModal");
@@ -62,6 +64,7 @@ function copyToClipboard(text) {
 
 let sunIcon = document.querySelector('#sunIcon');
 let moonIcon = document.querySelector('#moonIcon');
+var switcher = document.getElementById('themeSwitch');
 
 switcher.addEventListener('change', function(event){
     if (event.target.checked) {
@@ -75,43 +78,39 @@ switcher.addEventListener('change', function(event){
     }
 });
 
-window.addEventListener('load', function() {
-    let logo = document.querySelector('#logo');
-    let lightLogoUrl = logo.dataset.light;
-    let darkLogoUrl = logo.dataset.dark;
+// Get the theme switcher
 
-    let sunIcon = document.getElementById('sunIcon');
-    let moonIcon = document.getElementById('moonIcon');
 
-    let switcher = document.querySelector('.theme-switch input[type="checkbox"]');
+// Get the logo
+var logo = document.getElementById('logo');
 
-    switcher.addEventListener('change', function(event){
-        if (event.target.checked) {
-            document.body.classList.add('dark-theme');
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'inline-block';
-            logo.src = darkLogoUrl;
-        } else {
-            document.body.classList.remove('dark-theme');
-            sunIcon.style.display = 'inline-block';
-            moonIcon.style.display = 'none';
-            logo.src = lightLogoUrl;
-        }
-    });
-
-    // Initialize theme based on saved setting
-    var savedTheme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', savedTheme);
-    switcher.checked = savedTheme === 'dark';
-
-    if(switcher.checked){
-        logo.src = darkLogoUrl;
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'inline-block';
+// Event listener to handle the theme switch
+switcher.addEventListener('change', function(event) {
+    if (event.target.checked) {
+        document.body.classList.add('dark-mode');
+        logo.src = logo.dataset.dark; // Change logo to dark version
+        localStorage.setItem('theme', 'dark');
     } else {
-        logo.src = lightLogoUrl;
-        sunIcon.style.display = 'inline-block';
-        moonIcon.style.display = 'none';
+        document.body.classList.remove('dark-mode');
+        logo.src = logo.dataset.light; // Change logo to light version
+        localStorage.setItem('theme', 'light');
     }
+});
+
+// On page load, check for saved theme in local storage
+window.addEventListener('load', (event) => {
+    // Retrieve from local storage
+    var savedTheme = localStorage.getItem('theme') || 'light';
+
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        switcher.checked = true;
+        logo.src = logo.dataset.dark; // Load dark logo
+    } else {
+        document.body.classList.remove('dark-mode');
+        switcher.checked = false;
+        logo.src = logo.dataset.light; // Load light logo
+    }
+});
 
 });

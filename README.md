@@ -1,6 +1,6 @@
 # Wallster
 <div id="header" align="left">
- <img src="https://i.ibb.co/0Dt9TS1/wallster-github.jpg?raw=true">
+ <img src="imgs/wallster_github-min.jpg">
 </div>
 
 ## Find the perfect wallpaper! 🖼️
@@ -14,11 +14,10 @@
 
 _____________________________
 
-#### <b><u>DISCLAIMER</b></u><br>
+<b><u>DISCLAIMER</b></u><br>
 I do not own/create any of the wallpapers featured on the website, all wallpapers are property of 
 <a href = "https://unsplash.com/"><b>Unsplash</b></a>
-
-##### Report any <a href = "https://github.com/dizzydroid/Wallster/issues"><b>issues</b></a> you encounter!
+- Report any <a href = "https://github.com/dizzydroid/Wallster/issues"><b>issues</b></a> you encounter!
 _____________________________
 
 <p align="center"> This web-app is part of the DizzyBlog © dizzydroid. All rights reserved </p>

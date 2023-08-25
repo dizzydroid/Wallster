@@ -28,5 +28,5 @@ ___________________________________________________________
 #### I included the ```app.py``` file in case you want to run the flask-built app locally 🛠️
 _____________________________
 
-<p align="center"> This web-app is part of the DizzyBlog © dizzydroid. All rights reserved </p>
+<p align="center"> This web-app is part of the <a href = "https://dizzydroid.github.io/blog.html">DizzyBlog</a> © dizzydroid. All rights reserved </p>
 
